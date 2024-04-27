@@ -1,0 +1,46 @@
+5
+1
+Electronic crater.
+A region with an amazing electromagnetic aura that allows residents to use the power of charged particles to create new technologies and control electronics without using wires. The landscape is strewn with crystals of sparkling energy sources.
+1
+1. You saw the light of a band of looters in the distance. Would you like to approach them and chat?
+3
+A. Enter into a dialogue.
+B. Walk past.
+C. Check the inventory.
+2
+Magnetic Crossroads.
+The territory where the interaction of various charged particles has created a kind of magnetic maze. The residents of this area have developed amazing skills in controlling magnetic fields and creating unique magnetic devices.
+1
+1. You saw the light of a band of looters in the distance. Would you like to approach them and chat?
+3
+A. Enter into a dialogue.
+B. Walk past.
+C. Check the inventory.
+3
+Einzva Ridge
+A cold region in the middle of the forest, home to many looters and hungry wolves.
+1
+1. You saw the light of a band of looters in the distance. Would you like to approach them and chat?
+3
+A. Enter into a dialogue.
+B. Walk past.
+C. Check the inventory.
+4
+Electric Symphony.
+The region where the production of charged particles has led to the emergence of musical gusts of electricity, creating melodic sounds and light pulses. Residents of this area have learned how to create music from electrical discharges and conduct unique light performances.An electric Symphony is a region where the production of charged particles has led to the emergence of musical gusts of electricity, creating melodic sounds and light pulses. Residents of this area have learned how to create music from electrical discharges and conduct unique light performances.
+1
+1. You saw the light of a band of looters in the distance. Would you like to approach them and chat?
+3
+A. Enter into a dialogue.
+B. Walk past.
+C. Check the inventory.
+5
+The Plasma Area.
+A place where the effects of an explosion at the production site of charged particles led to the formation of plasma columns intertwining above the ground. Creatures with unique abilities to control and manipulate plasma live here.
+1
+1. You saw the light of a band of looters in the distance. Would you like to approach them and chat?
+3
+A. Enter into a dialogue.
+B. Walk past.
+C. Check the inventory.

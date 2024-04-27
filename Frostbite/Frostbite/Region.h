@@ -2,8 +2,37 @@
 #include <string>
 #include <vector>
 
+struct RegionDef {
+	int id;
+	int countActions;
+	std::string regionName;
+	std::string description;
+	std::vector<std::string> actions;
+	std::vector<std::vector <std::string> > variantsToChoose;
+};
+
+class RegionRegistry {
+public:
+	const RegionDef *getRegionDef(int id) const;
+	void loadFromStream(std::istream& is);
+private:
+	std::vector<RegionDef> regions_;
+};
+
+/* 
 class Region {
 public:
+	Region(const std::string &regionName, const std::string &description, const std::string &connectedRegion, const std::vector<std::string> &actions, const int &regionLevel, const int &countActions)
+		: regionName_(regionName)
+		, description_(description)
+		, connectedRegion_(connectedRegion)
+		, actions_(actions)
+		, regionLevel_(regionLevel)
+		, countActions_(countActions)
+	{}
+
+	~Region () noexcept {}
+
 	std::string regionName() const {
 		return regionName_;
 	}
@@ -16,7 +45,7 @@ public:
 		return connectedRegion_;
 	}
 
-	std::vector<std::string> actions() {
+	std::vector<std::string> actions() const {
 		return actions_;
 	}
 
@@ -28,9 +57,7 @@ public:
 		return countActions_;
 	}
 
-	void interact() {
-
-	}
+	void interact();
 
 private:
 	std::string regionName_;
@@ -40,3 +67,4 @@ private:
 	int regionLevel_;
 	int countActions_;
 };
+*/

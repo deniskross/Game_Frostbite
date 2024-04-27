@@ -1,25 +1,51 @@
 #include "Region.h"
 #include <iostream>
+#include <cassert>
 
-void Region::interact() {
-	std::cout << description_ << std::endl;
+const int MAX_STRING_LEN = 255;
 
-    std::vector<std::string> actionPull;
-    for (int i = 0; i < countActions_; ++i)
-    {
-        actionPull.push_back(actions_[rand() % actions_.size()]);
-        std::cout << actionPull[i] << std::endl;
-        int chosenAction;
-
-        std::vector<std::string> variants = { "Accept.", "Refuse.", "Check the inventory." };
-
-        std::cout << "What would you choose?" << std::endl;
-        for (int j = 0; j < variants.size(); ++j)
-        {
-            std::cout << j+1 << ". " << variants[j] << std::endl;
-        }
-        do {
-            std::cin >> chosenAction;
-        } while (chosenAction < 1 || chosenAction > variants.size());
-    }
+const RegionDef* RegionRegistry::getRegionDef(int id) const {
+    assert(id >= 0 && id < regions_.size());
+    return &regions_[id];
 }
+
+void RegionRegistry::loadFromStream(std::istream& is) {
+    regions_.clear();
+
+    int countRegions = 0;
+    is >> countRegions;
+
+    RegionDef emptyDef;
+    emptyDef.id = 0;
+    regions_.push_back(std::move(emptyDef));
+
+    for (int k = 0; k < countRegions; ++k) {
+        RegionDef rd;
+        is >> rd.id;
+        char buf[MAX_STRING_LEN + 1] = { 0 };
+        is.getline(buf, MAX_STRING_LEN);
+
+        memset(buf, 0, sizeof(buf));
+        is.getline(buf, MAX_STRING_LEN);
+        rd.regionName = buf;
+
+        memset(buf, 0, sizeof(buf));
+        is.getline(buf, MAX_STRING_LEN);
+        rd.description = buf;
+
+        is >> rd.countActions;
+        for (int i = 0; i < rd.countActions; ++i) {
+            std::string action;
+            int actionId = i;
+            is >> action;
+            rd.actions.push_back(action);
+
+            int countVariants;
+            is >> countVariants;
+            for (int j = 0; j < countVariants; ++j) {
+                rd.variantsToChoose.push_back(std::vector <std::string>());
+            }
+        }
+        regions_.push_back(std::move(rd));
+    }
+};
